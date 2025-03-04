@@ -5,48 +5,40 @@
     <title>Coda Shop</title>
     <style>
         :root {
-            --color-dark-main: #333; /* Define your color */
+            --color-dark-main: #280031; /* Define your color */
             --font-family-primary: Arial, sans-serif; /* Define your font family */
         }
 
         body, html {
             height: 100%;
             margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--color-dark-main); /* Color the whole page */
+            font-family: var(--font-family-primary);
         }
 
-        .bgimg {
-            background-color: var(--color-dark-main);
-            font-family: var(--font-family-primary);
+        .content {
+            background-color: rgba(66, 38, 131, 0.93); /* Separate color for the content */
+            padding: 20px;
+            border: 2px solid #000; /* Border for the content */
+            text-align: center;
             font-size: 16px;
         }
 
-        .bordered {
-            border: 2px solid #000;
-            padding: 10px;
-        }
-
-        .shadow {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .rounded {
-            border-radius: 10px;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-        }
-
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-        .custom-font {
-            font-family: 'Roboto', sans-serif;
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px; /* Center the image and add margin below */
         }
     </style>
 </head>
 <body>
-<div class="bgimg bordered shadow rounded gradient-bg custom-font">
-    <!-- Your content here -->
+<div class="content">
+    <img src="image222.png" alt="Exclamation mark">
+    <p>Sorry, we were unable to verify your purchase. Please try again.</p>
 </div>
 </body>
 </html>
