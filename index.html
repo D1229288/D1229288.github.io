@@ -13,32 +13,113 @@
             height: 100%;
             margin: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: var(--color-dark-main); /* Color the whole page */
             font-family: var(--font-family-primary);
+            color: white; /* Set text color to white */
+        }
+
+        .header {
+            width: 100%;
+            padding: 5px 20px; /* Reduced vertical padding, added horizontal padding */
+            border-bottom: 2px solid white; /* Border at the top */
+            display: flex;
+            justify-content: flex-start; /* Align items to the left */
+            align-items: center;
+            position: fixed; /* Fix the header at the top */
+            top: 0; /* Position at the top of the page */
+            left: 0;
+            background-color: var(--color-dark-main); /* Match the background color */
+            z-index: 1000; /* Ensure it stays on top of other content */
+            height: 60px; /* Set a fixed height for the header */
+            box-sizing: border-box; /* Ensure padding is included in the height */
+        }
+
+        .header a {
+            display: flex;
+            align-items: center;
+            text-decoration: none; /* Remove underline from the link */
+        }
+
+        .header img {
+            height: 50px; /* Increased height to make the logo bigger */
+            margin-left: 20px; /* Added margin to move the logo slightly to the right */
         }
 
         .content {
-            background-color: rgba(66, 38, 131, 0.93); /* Separate color for the content */
-            padding: 20px;
-            border: 2px solid #000; /* Border for the content */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            font-size: 16px;
+            height: 100vh; /* Make the content take up the full viewport height */
         }
 
         .content img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 20px; /* Center the image and add margin below */
+            height: 200px; /* Increased size of the exclamation mark */
+            margin-bottom: 20px; /* Add margin below the image */
+            animation: heartbeat 2.5s infinite; /* Slower heartbeat animation */
+        }
+
+        .content p {
+            font-size: 40px; /* Adjust font size */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Oval Button */
+        .oval-button {
+            margin-top: 20px; /* Add space above the button */
+            padding: 10px 25px; /* Reduced padding to make the button thinner */
+            background-color: yellow; /* Yellow fill */
+            border: 2px solid white; /* White outline */
+            border-radius: 50px; /* Make it oval-shaped */
+            font-size: 20px; /* Reduced font size */
+            font-weight: 400; /* Thinner text */
+            color: var(--color-dark-main); /* Text color */
+            text-decoration: none; /* Remove underline */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        .oval-button:hover {
+            background-color: #ffcc00; /* Slightly darker yellow on hover */
+        }
+
+        /* Heartbeat Animation */
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1); /* Normal size */
+            }
+            25% {
+                transform: scale(1.1); /* Slightly bigger */
+            }
+            50% {
+                transform: scale(1); /* Back to normal */
+            }
+            75% {
+                transform: scale(1.1); /* Slightly bigger */
+            }
+            100% {
+                transform: scale(1); /* Back to normal */
+            }
         }
     </style>
 </head>
 <body>
+<div class="header">
+    <!-- Add a link to the Coda Shop homepage -->
+    <a href="https://www.codashop.com" target="_blank">
+        <img src="og-image.png" alt="Coda Shop Logo"> <!-- Add your logo here -->
+    </a>
+</div>
 <div class="content">
     <img src="image222.png" alt="Exclamation mark">
-    <p>Sorry, we were unable to verify your purchase. Please try again.</p>
+    <p>Sorry, we were unable to verify your purchase.</p>
+    <p>Please try again.</p> <!-- Separate line for "Please try again" -->
+
+    <!-- Oval Button -->
+    <a href="https://www.codashop.com" class="oval-button">Return to Homepage</a>
 </div>
 </body>
 </html>
